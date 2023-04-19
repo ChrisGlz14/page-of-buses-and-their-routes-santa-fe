@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image:url(img/Logos/santa-fe-828x548.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: sans-serif;
+}
+
+.container-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 15px;
+    justify-items: center;
+  }
+
+  .container-grid label {
+    cursor: pointer;
+  }
+
+  .container-grid img {
+    width: 100px;
+  }
+
+  .container-grid .lineas {
+    display: grid;
+    justify-items: center;
+    color: #fff;
+    background-color: black;
+    border-radius: 20%;
+    cursor: pointer;
+  }
+
+  

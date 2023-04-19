@@ -1,0 +1,1 @@
+const lineas = document.querySelector(".lineas")
