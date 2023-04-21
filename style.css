@@ -158,3 +158,9 @@ nav {
   cursor: pointer;
 }
 
+/* Mapa Overlay */
+
+.mapa {
+  display: flex;
+}
+
