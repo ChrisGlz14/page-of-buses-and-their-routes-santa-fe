@@ -1,11 +1,14 @@
 
-const toggleBtn = document.querySelector(".menu-toggle");
-const menu = document.querySelector("nav ul");
-const lineas = document.querySelector(".lineas");
+const nav = document.querySelector("#nav");
+const abrir = document.querySelector("#abrir");
+const cerrar = document.querySelector("#cerrar");
 
 
 
-toggleBtn.addEventListener("click",show =>{
-    menu.classList.toggle("show");
-    console.log (toggleBtn)
+abrir.addEventListener("click", ()=> {
+    nav.classList.add("visible");
+})
+
+cerrar.addEventListener("click", ()=>{
+    nav.classList.remove("visible")
 })

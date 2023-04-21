@@ -1,89 +1,120 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-  font-family:'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
-#background{
+#background {
   min-height: 100vh;
   background: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75)),
-      url(./img/Logos/santa-fe-828x548.jpg) no-repeat center center fixed;
-      background-size: cover;
+    url(./img/Logos/santa-fe-828x548.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(230, 216, 56);
+  background: linear-gradient(
+    90deg,
+    rgba(230, 216, 56, 1) 0%,
+    rgba(234, 70, 58, 1) 100%
+  );
 }
 
 .logo {
-  display: flex;
-
-}
-@media screen and (max-width:450px) {
-  .logo {
-    display: flex;
-    justify-content: center;
-    width: auto;
-    height: 50px;
-  }
+  max-width: 300px;
 }
 
 nav {
   display: flex;
-  justify-content: space-between;
-  overflow: hidden;
-  background: rgb(230,216,56);
-  background: linear-gradient(90deg, rgba(230,216,56,1) 0%, rgba(234,70,58,1) 100%);
-}
-@media only screen and (max-width: 450px){ 
-  nav {
-    position: relative;
-  }
-  .menu-toggle {
-    position: relative;
-    right: 0px;
-    background: none;
-    padding: 5px;
-    flex: auto;
-  }
+  width: auto;
+  padding: 20px 0px;
 }
 
-
-nav ul {
-  display:flex;
-  align-items: center;
-  justify-content: flex-end;
-  list-style: none;
-  gap: 40px;
-}
-@media screen and (max-width:450px) {
-  nav ul{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 10px
-  }
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
 }
 
-
-nav ul li {
-  transition: transform 0.25s ease;
-}
-nav ul li:hover {
-  transform:scale(1.1);
-}
-
-nav ul li a{
+.nav-list li a {
   text-decoration: none;
-  color: white;
-  font-size: 17px;
-  margin-right: 40px;
-  text-shadow: 3px 3px 2px rgba(128, 0, 0, 1);
+  color: #ffffff;
+  margin-right: 20px;
 }
+
+.abrir-menu,
+.cerrar-menu {
+    display: none;
+}
+
+@media screen and (max-width: 550px) {
+    .abrir-menu,
+    .cerrar-menu {
+        display: block;
+        border: 0;
+        font-size: 1.25rem;
+        background-color: transparent;
+        cursor: pointer;
+        
+    }
+
+    .abrir-menu {
+        color: #ffffff;
+        font-size: 35px;
+        margin-right: 10px;
+    }
+
+    .cerrar-menu {
+        color: #ececec;
+        font-size: 35px;
+        margin-right: 10px;
+    }
+
+    .nav {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #1c1c1c;
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    }
+
+    .nav.visible {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.2s ease-in-out;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .nav-list li a {
+        color: #ecececec;
+    }
+}
+
+
 
 .recorridos {
-  display:flex;
+  display: flex;
   text-align: center;
   justify-content: space-around;
   color: #fff;
@@ -92,33 +123,37 @@ nav ul li a{
 }
 
 .container-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 15px;
-    justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 15px;
+  justify-items: center;
+}
+@media screen and (max-width: 750px) {
+  .container-grid {
+    grid-row-gap: 100px;
   }
+}
 
-  .container-grid p {
-    cursor: pointer;
-  }
+.container-grid p {
+  cursor: pointer;
+}
 
-  .container-grid img {
-    display: block;
-    margin-top: 20px;
-    width: 100px;
-    transition: transform 0.25s ease;
-  }
-  
-  .container-grid img:hover {
-    transform: scale(1.1);
-  }
+.container-grid img {
+  display: block;
+  margin-top: 20px;
+  width: 100px;
+  transition: transform 0.25s ease;
+}
 
-  .container-grid .lineas {
-    display: grid;
-    justify-items: center;
-    color: #fff;
-    cursor: pointer;
-  }
+.container-grid img:hover {
+  transform: scale(1.1);
+}
 
-  
+.container-grid .lineas {
+  display: grid;
+  justify-items: center;
+  color: #fff;
+  cursor: pointer;
+}
+
